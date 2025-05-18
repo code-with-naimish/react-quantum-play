@@ -4,7 +4,7 @@ import './App.css'
 
 const App = () => {
   return (
-    <div className='bg-red-500'>App</div>
+    <div className=' bg-gradient-to-tl from-indigo-500 to-fuchsia-500 text-white'>App</div>
   )
 }
 
