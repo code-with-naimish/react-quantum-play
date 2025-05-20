@@ -1,12 +1,16 @@
 import { Routes, Route } from "react-router";
 import Home from "../pages/home";
-import About from "../pages/about";
+import CategoryPage from "../pages/category-page";
+// import About from "../pages/about";
+
+
 
 const RootNavs = () => {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
+      <Route path="category/:id" element={<CategoryPage />} />
+      {/* <Route path="about" element={<About />} /> */}
       {/* <Route path="about" element={<About />} />
 
       <Route element={<AuthLayout />}>
