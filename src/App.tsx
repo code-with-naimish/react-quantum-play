@@ -82,7 +82,15 @@ const App = () => {
         </nav>
 
         {navLinks.map((val, i) => {
-          return <div key={i}>{val.label}
+          return <div key={i}>
+
+
+
+            <span className='font-bold'>{val.label}</span>
+
+
+
+
             {val.childern.map((val2, i2) => {
               return <NavLink
                 key={i2}
@@ -90,7 +98,7 @@ const App = () => {
                   pathname: val2.path
                 }}
                 className={({ isActive }) =>
-                  isActive ? "bg-red-500" : ""
+                  isActive ? "bg-red-500 block" : "block"
                 }
               >
                 {val2.label}
