@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router";
 import Home from "../pages/home";
 import CategoryPage from "../pages/category-page";
+import PlatformPage from "../pages/platform-page";
+import SortByPage from "../pages/sortby-page";
 // import About from "../pages/about";
 
 
@@ -10,19 +12,9 @@ const RootNavs = () => {
     <Routes>
       <Route index element={<Home />} />
       <Route path="category/:id" element={<CategoryPage />} />
-      {/* <Route path="about" element={<About />} /> */}
-      {/* <Route path="about" element={<About />} />
+      <Route path="platform/:id" element={<PlatformPage />} />
+      <Route path="sort-by/:id" element={<SortByPage />} />
 
-      <Route element={<AuthLayout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-      </Route>
-
-      <Route path="concerts">
-        <Route index element={<ConcertsHome />} />
-        <Route path=":city" element={<City />} />
-        <Route path="trending" element={<Trending />} />
-      </Route> */}
     </Routes>
 
   )
