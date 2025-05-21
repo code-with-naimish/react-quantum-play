@@ -3,7 +3,7 @@
 import { NavLink } from 'react-router';
 import './App.css'
 import RootNavs from './components/root-navs'
-import { PiGameControllerLight } from "react-icons/pi";
+import { IoGameControllerSharp } from 'react-icons/io5';
 // import type { GameModel } from './_models/game.model';
 // import { fetchOptions } from './_helpers/fetch-option';
 
@@ -59,11 +59,20 @@ const navLinks = [
     ]
   },
   // {
-  //   label: "Platform", path: "/platform"
+  //   label: "Platform",
+  //   children: [
+  //     { label: "PC", path: "/platform/pc" },
+  //     { label: "Browser", path: "/platform/browser" }
+  //   ]
   // },
   // {
-  //   label: "Sort-by", path: "/sortby"
-  // },
+  //   label: "Sort-by",
+  //   children: [
+  //     { label: "Release-Date", path: "/sort-by/release-date" },
+  //     { label: "Popularity", path: "/sort-by/popularity" },
+  //     { label: "Alphabetical", path: "/sort-by/alphabetical" }
+  //   ]
+  // }
 ]
 
 
@@ -73,23 +82,17 @@ const App = () => {
 
   return (
     <div className='grid grid-cols-12'>
-      <aside className='bg-gray-800 border-white col-span-3 ml-6 '>
+      <aside className='bg-gray-800 col-span-3 ml-6 rounded-2xl '>
         <nav>
-          <div className='flex items-center justify-center gap-2 p-5'>
-            <span className='text-5xl text-white bg-black w-[70px] h-[70px] rounded-full flex items-center justify-center'><PiGameControllerLight /></span>
-            <h1 className='text-3xl font-bold'>Quantum Play</h1>
+          <div className='flex  justify-center gap-2 p-5 mb-5'>
+            <span className='text-5xl text-white'><IoGameControllerSharp /></span>
+            <h1 className='text-3xl font-medium text-center'>Quantum Play</h1>
           </div>
         </nav>
 
         {navLinks.map((val, i) => {
-          return <div key={i}>
-
-
-
-            <span className='font-bold'>{val.label}</span>
-
-
-
+          return <div key={i} className='p-5'>
+            <span className=' mb-2 block text-lg text-gray'>{val.label}</span>
 
             {val.childern.map((val2, i2) => {
               return <NavLink
@@ -98,7 +101,7 @@ const App = () => {
                   pathname: val2.path
                 }}
                 className={({ isActive }) =>
-                  isActive ? "bg-red-500 block" : "block"
+                  isActive ? "rounded-2xl font-medium px-4 py-3 bg-gradient-to-tl from-indigo-500 to-fuchsia-500 block" : "font-medium block px-4 py-3 "
                 }
               >
                 {val2.label}
