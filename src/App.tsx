@@ -4,6 +4,7 @@ import { NavLink } from 'react-router';
 import './App.css'
 import RootNavs from './components/root-navs'
 import { IoGameControllerSharp } from 'react-icons/io5';
+import { ToastContainer } from 'react-toastify';
 // import type { GameModel } from './_models/game.model';
 // import { fetchOptions } from './_helpers/fetch-option';
 
@@ -118,6 +119,12 @@ const App = () => {
       <main className='col-span-9'>
         <RootNavs />
       </main>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        theme="light"
+      />
     </div>
   )
 }
