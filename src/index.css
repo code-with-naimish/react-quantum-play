@@ -3,4 +3,9 @@
 @theme {
   --color-background: #0c0c0c;
   --color-gray: #a9a9a9;
+  --color-border: #f0f0ff;
+}
+
+:root {
+  color-scheme: dark light;
 }

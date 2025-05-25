@@ -44,22 +44,34 @@ const SortByPage = () => {
 
 
   return (
-    <div>{params.id}
-      <div >
+    <div>
+      <h2 className="flex items-center justify-center text-xl underline underline-offset-8 mb-5 font-bold">{params.id}</h2>
+      {/* <div >
         <LuLoaderCircle className="animate-spin" />
-      </div>
+      </div> */}
       {loading && <div >
         <LuLoaderCircle className="animate-spin" />
       </div>}
       {!loading && (!items || items.length === 0) && <p>No games available</p>}
       {!loading && (items && items.length > 0) &&
-        <>
+        <div className="grid grid-cols-3 gap-7">
           {items.map((val, i) => {
-            return <div key={i}>
-              {val.title}
+            return <div key={i} >
+              <div className="bg-gray-800 rounded-2xl overflow-hidden">
+                <div className="h-[201px]">
+                  <img className=" w-full h-full object-cover" src={val.thumbnail} alt={val.title} />
+                </div>
+                <div className="p-5">
+                  <p className="text-sm text-gray mb-1">{val.genre}</p>
+                  <p className="text-xl font-bold  mb-3">{val.title}</p>
+                  <p className="text-base text-gray truncate">{val.short_description}</p>
+                </div>
+
+
+              </div>
             </div>
           })}
-        </>
+        </div>
       }
     </div>
   )

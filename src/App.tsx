@@ -1,9 +1,12 @@
 
-// import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router';
 import './App.css'
-import RootNavs from './components/root-navs'
 import { IoGameControllerSharp } from 'react-icons/io5';
+import { MdOutlineClose } from 'react-icons/md';
+import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { RiMenu4Fill } from 'react-icons/ri';
+import RootNavs from './components/root-navs';
 import { ToastContainer } from 'react-toastify';
 // import type { GameModel } from './_models/game.model';
 // import { fetchOptions } from './_helpers/fetch-option';
@@ -82,41 +85,66 @@ const navLinks: {
 
 
 const App = () => {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  const toggleAside = () => {
+    setShowSidebar(prev => !prev)
+  }
+
+  const closeAside = () => {
+    setShowSidebar(false)
+  }
 
 
 
   return (
-    <div className='grid grid-cols-12'>
-      <aside className='bg-gray-800 col-span-3 ml-6 rounded-2xl '>
-        <nav>
-          <div className='flex  justify-center gap-2 p-5 mb-5'>
-            <span className='text-5xl text-white'><IoGameControllerSharp /></span>
-            <h1 className='text-3xl font-medium text-center'>Quantum Play</h1>
-          </div>
+    <div className=' relative flex min-h-screen'>
+      <aside className={`z-[60] ${showSidebar ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full'} transition-all duration-300 w-64 fixed inset-y-0 flex flex-col `}>
+        <button onClick={closeAside} className='text-lg absolute top-2 right-2 md:hidden block'>
+          <MdOutlineClose />
+        </button>
+
+        <div className=' py-3  flex items-center justify-center gap-1 bg-gray-800 border-b '>
+          <span className='text-4xl text-black bg-white w-[50px] h-[50px] rounded-full flex items-center justify-center'><IoGameControllerSharp /></span>
+          <h1 className='text-2xl font-bold text-center'>Quantum Play</h1>
+
+        </div>
+
+        <nav className=' flex-1 overflow-y-auto bg-gray-800 ' >
+          {navLinks.map((val, i) => {
+            return <div key={i} className='p-5'>
+              <span className=' mb-2 block text-base text-gray'>{val.label}</span>
+
+              {val.children.map((val2, i2) => {
+                return <NavLink
+                  key={i2}
+                  to={{
+                    pathname: val2.path
+                  }}
+                  className={({ isActive }) =>
+                    isActive ? "rounded-2xl font-medium px-4 py-3 bg-gradient-to-tl from-indigo-500 to-fuchsia-500 block" : "font-medium block px-4 py-3 "
+                  }
+                >
+                  {val2.label}
+                </NavLink>
+              })}
+            </div>
+          })}
         </nav>
-
-        {navLinks.map((val, i) => {
-          return <div key={i} className='p-5'>
-            <span className=' mb-2 block text-lg text-gray'>{val.label}</span>
-
-            {val.children.map((val2, i2) => {
-              return <NavLink
-                key={i2}
-                to={{
-                  pathname: val2.path
-                }}
-                className={({ isActive }) =>
-                  isActive ? "rounded-2xl font-medium px-4 py-3 bg-gradient-to-tl from-indigo-500 to-fuchsia-500 block" : "font-medium block px-4 py-3 "
-                }
-              >
-                {val2.label}
-              </NavLink>
-            })}
-          </div>
-        })}
-
       </aside>
-      <main className='col-span-9'>
+
+      <header className="left-0 md:left-64 transition-all duration-300 flex  justify-between items-center gap-6 px-4 py-3.5 bg-gray-800 border-l  fixed top-0  right-0">
+        <div className='md:hidden flex items-center gap-4'>
+          <button onClick={toggleAside} className='flex-none cursor-pointer flex items-center   text-xl justify-center w-10 h-10 rounded-lg  bg-blue-500/10 text-blue-500'><RiMenu4Fill /></button>
+
+        </div>
+        <h1 className="text-xl text-primary font-medium hidden md:block">Welcome!
+        </h1>
+        <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
+          <FaGithub /></a>
+      </header>
+
+      <main className='md:ml-64 flex-1 mt-[69px] p-6 overflow-x-auto'>
         <RootNavs />
       </main>
 
