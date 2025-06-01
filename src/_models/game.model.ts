@@ -11,3 +11,4 @@ export interface GameModel {
   release_date: string; // Consider using Date if you want to parse it later
   freetogame_profile_url: string;
 }
+

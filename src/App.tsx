@@ -1,5 +1,4 @@
 
-import { NavLink } from 'react-router';
 import './App.css'
 import { IoGameControllerSharp } from 'react-icons/io5';
 import { MdOutlineClose } from 'react-icons/md';
@@ -8,13 +7,18 @@ import { FaGithub } from 'react-icons/fa';
 import { RiMenu4Fill } from 'react-icons/ri';
 import RootNavs from './components/root-navs';
 import { ToastContainer } from 'react-toastify';
+import MenuLink from './components/menu-link';
 // import type { GameModel } from './_models/game.model';
 // import { fetchOptions } from './_helpers/fetch-option';
 
 const navLinks: {
   label: string,
-  children: { label: string, path: string }[]
+  children?: { label: string, path: string }[],
+  path?: string
 }[] = [
+    {
+      label: "Home", path: "/"
+    },
     {
       label: "Category",
       children: [
@@ -113,20 +117,12 @@ const App = () => {
         <nav className=' flex-1 overflow-y-auto bg-gray-800 ' >
           {navLinks.map((val, i) => {
             return <div key={i} className='p-5'>
+
               <span className=' mb-2 block text-base text-gray'>{val.label}</span>
 
-              {val.children.map((val2, i2) => {
-                return <NavLink
-                  key={i2}
-                  to={{
-                    pathname: val2.path
-                  }}
-                  className={({ isActive }) =>
-                    isActive ? "rounded-2xl font-medium px-4 py-3 bg-gradient-to-tl from-indigo-500 to-fuchsia-500 block" : "font-medium block px-4 py-3 "
-                  }
-                >
-                  {val2.label}
-                </NavLink>
+              {val?.children?.map((val2, i2) => {
+                return <MenuLink val2={val2} key={i2} />
+
               })}
             </div>
           })}

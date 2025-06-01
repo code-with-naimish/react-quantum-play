@@ -6,6 +6,44 @@
   --color-border: #f0f0ff;
 }
 
+@layer components {
+  .no-data {
+    @apply flex items-center justify-center h-[60vh];
+  }
+}
+
 :root {
   color-scheme: dark light;
+}
+
+.custom-container {
+  @apply max-w-[1280px] mx-auto px-5;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-indigo-500 to-fuchsia-500 inline-block text-transparent bg-clip-text;
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat
+    radial-gradient(circle closest-side, var(--color-fuchsia-500) 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
 }
