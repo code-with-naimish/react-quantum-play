@@ -23,7 +23,7 @@ const DetailPage = () => {
       if (!response.ok) {
         throw new Error("Something went wrong! Please try again later ")
       }
-      const data = await response.json()
+      const data = await response.json() //response is an object
       setDetail(data)
 
 

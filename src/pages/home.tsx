@@ -1,3 +1,4 @@
+import SortByPage from "./sortby-page"
 
 const Home = () => {
 
@@ -16,7 +17,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      < SortByPage />
     </div>
+
   )
 }
 
