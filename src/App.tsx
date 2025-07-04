@@ -11,7 +11,7 @@ const App = () => {
 
         <aside className='md:col-span-3 flex flex-col overflow-hidden'>
           <Logo />
-          <div className='bg-pink-500 flex-1 overflow-y-auto overflow-x-hidden'>
+          <div className=' flex-1 overflow-y-auto overflow-x-hidden'>
             <SideNav />
           </div>
         </aside>
