@@ -1,179 +1,30 @@
 
 import './App.css'
-import { IoGameControllerSharp } from 'react-icons/io5';
-import { MdOutlineClose } from 'react-icons/md';
-import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
-import { RiMenu4Fill } from 'react-icons/ri';
-import RootNavs from './components/root-navs';
-import { ToastContainer } from 'react-toastify';
-import MenuLink from './components/menu-link';
-// import type { GameModel } from './_models/game.model';
-// import { fetchOptions } from './_helpers/fetch-option';
-
-const navLinks: {
-  label: string,
-  children?: { label: string, path: string }[],
-  path?: string
-}[] = [
-    {
-      label: "Home", path: "/"
-    },
-    {
-      label: "Category",
-      children: [
-        { label: "MMORPG", path: "/category/mmorpg" },
-        { label: "Shooter", path: "/category/shooter" },
-        { label: "Strategy", path: "/category/strategy" },
-        { label: "MOBA", path: "/category/moba" },
-        { label: "Racing", path: "/category/racing" },
-        { label: "Sports", path: "/category/sports" },
-        { label: "Social", path: "/category/social" },
-        { label: "Sandbox", path: "/category/sandbox" },
-        { label: "Open World", path: "/category/open-world" },
-        { label: "Survival", path: "/category/survival" },
-        { label: "PvP", path: "/category/pvp" },
-        { label: "PvE", path: "/category/pve" },
-        { label: "Pixel", path: "/category/pixel" },
-        { label: "Voxel", path: "/category/voxel" },
-        { label: "Zombie", path: "/category/zombie" },
-        { label: "Turn-Based", path: "/category/turn-based" },
-        { label: "First-Person", path: "/category/first-person" },
-        { label: "Third-Person", path: "/category/third-person" },
-        { label: "Top-Down", path: "/category/top-down" },
-        { label: "Tank", path: "/category/tank" },
-        { label: "Space", path: "/category/space" },
-        { label: "Sailing", path: "/category/sailing" },
-        { label: "Side-Scroller", path: "/category/side-scroller" },
-        { label: "Superhero", path: "/category/superhero" },
-        { label: "Permadeath", path: "/category/permadeath" },
-        { label: "Card", path: "/category/card" },
-        { label: "Battle Royale", path: "/category/battle-royale" },
-        { label: "MMO", path: "/category/mmo" },
-        { label: "MMOFPS", path: "/category/mmofps" },
-        { label: "MMOTPS", path: "/category/mmotps" },
-        { label: "3D", path: "/category/3d" },
-        { label: "2D", path: "/category/2d" },
-        { label: "Anime", path: "/category/anime" },
-        { label: "Fantasy", path: "/category/fantasy" },
-        { label: "Sci-Fi", path: "/category/sci-fi" },
-        { label: "Fighting", path: "/category/fighting" },
-        { label: "Action RPG", path: "/category/action-rpg" },
-        { label: "Action", path: "/category/action" },
-        { label: "Military", path: "/category/military" },
-        { label: "Martial Arts", path: "/category/martial-arts" },
-        { label: "Flight", path: "/category/flight" },
-        { label: "Low Spec", path: "/category/low-spec" },
-        { label: "Tower Defense", path: "/category/tower-defense" },
-        { label: "Horror", path: "/category/horror" },
-        { label: "MMORTS", path: "/category/mmorts" }
-      ]
-    },
-    {
-      label: "Platform",
-      children: [
-        { label: "PC", path: "/platform/pc" },
-        { label: "Browser", path: "/platform/browser" }
-      ]
-    },
-
-    {
-      label: "Sort-by",
-      children: [
-        { label: "Release-Date", path: "/sort-by/release-date" },
-        { label: "Popularity", path: "/sort-by/popularity" },
-        { label: "Alphabetical", path: "/sort-by/alphabetical" }
-      ]
-    }
-  ]
-
 
 const App = () => {
-  const [showSidebar, setShowSidebar] = useState<boolean>(false);
-
-  const toggleAside = () => {
-    setShowSidebar(prev => !prev)
-  }
-
-  const closeAside = () => {
-    setShowSidebar(false)
-  }
-
-
-
   return (
-    <div className=' relative flex min-h-screen'>
-      <aside className={`z-[60] ${showSidebar ? 'translate-x-0' : 'md:translate-x-0 -translate-x-full'} transition-all duration-300 w-64 fixed inset-y-0 flex flex-col `}>
-        <button onClick={closeAside} className='text-lg absolute top-2 right-2 md:hidden block'>
-          <MdOutlineClose />
-        </button>
+    <div className='bg-slate-200 p-8 '>
+      <div className='grid md:grid-cols-12 grid-cols-1 rounded-xl overflow-hidden  bg-black text-white h-[calc(100dvh-64px)]'>
 
-        <div className=' py-3  flex items-center justify-center gap-1 bg-gray-800 border-b '>
-          <span className='text-4xl text-black bg-white w-[50px] h-[50px] rounded-full flex items-center justify-center'><IoGameControllerSharp /></span>
-          <h1 className='text-2xl font-bold text-center'>Quantum Play</h1>
+        <aside className='md:col-span-3 flex flex-col overflow-hidden bg-yellow-500'>
+          <div className='bg-red-500'>Logo</div>
+          <div className='bg-pink-500 overflow-y-auto overflow-x-hidden'>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate omnis, quidem perferendis minima nostrum sed numquam rem praesentium delectus tempora nobis harum aperiam nesciunt et eveniet consequatur facilis ipsa molestias! Ex facere doloribus dolor, explicabo nisi, accusantium, illum nostrum quae at suscipit odit ad repudiandae temporibus? Dolorem cum officiis quaerat mollitia quam ratione tempore inventore magni error delectus magnam sed suscipit dolore sunt iure, ullam corrupti? Rerum quidem inventore voluptatibus quos velit quasi iusto placeat laudantium nostrum natus harum saepe, provident maxime commodi optio officiis itaque aliquam enim. Iusto voluptates similique recusandae reiciendis! Assumenda blanditiis suscipit fugiat esse, atque voluptas. Possimus unde sit ex dolores vel nihil aspernatur reprehenderit tenetur, eaque dolorem deserunt distinctio, amet maxime nesciunt non magnam commodi ut libero. Aliquam odio voluptates optio perferendis, quis ex adipisci, nisi consequatur facere porro ratione velit impedit quasi ipsam aliquid sapiente saepe dolores dignissimos nihil minima veritatis eligendi? Aspernatur accusantium quasi dignissimos. Voluptatibus nemo ad aliquid veritatis recusandae eveniet illum sapiente necessitatibus error veniam consectetur cumque consequatur asperiores, debitis quidem dignissimos reiciendis sequi sunt. Consequatur possimus nobis reiciendis, animi magnam dolorum ducimus sint, enim laborum delectus voluptatum? Quis a sunt at corrupti optio rem error. Unde possimus corporis, similique obcaecati repellat, placeat in sit cupiditate autem magni delectus porro laborum cum et, nisi doloribus tempore officiis molestias quisquam dignissimos. Incidunt consequatur qui ab cupiditate id culpa consequuntur aliquid excepturi possimus doloremque amet sit non minima facilis, eum quam magnam! Labore, assumenda voluptate sapiente veritatis, vel molestias optio hic excepturi, rem minima nam? Dolorem, vero, numquam eveniet accusamus corporis modi hic corrupti placeat commodi similique ullam nulla vitae aperiam quibusdam repellendus. Maiores temporibus perspiciatis inventore odio itaque ratione, deleniti nesciunt ipsa laboriosam soluta tenetur dicta molestiae! A explicabo quos, perspiciatis et fugit possimus autem aspernatur aliquid dolores, saepe, ullam dolore! Alias harum quia similique provident quos expedita, mollitia nobis aut labore id corrupti. Cum quasi culpa quas facere necessitatibus nulla, magni doloremque, officiis, aliquam possimus tempore. Laborum modi alias esse vitae officia itaque, nisi impedit quae aliquam, est nihil expedita magnam, a nemo id. Dignissimos, commodi? Nihil obcaecati nostrum ratione reiciendis alias officia id. Ducimus, repellendus natus atque laborum recusandae dolores illo temporibus adipisci blanditiis omnis! Qui mollitia enim perspiciatis in est tempore inventore porro quis. Accusamus suscipit nobis earum, animi atque, blanditiis perspiciatis nesciunt alias dolor sit vitae exercitationem ducimus assumenda quam velit impedit quos commodi magnam temporibus ea eligendi sequi tempora esse! Consectetur laudantium illum, dolores voluptatibus pariatur iusto optio! Commodi, minima? Voluptatum illo totam consequuntur. Eligendi quibusdam ipsam consequuntur quae, soluta non doloremque suscipit, nemo nulla officiis molestias possimus sequi, magnam quaerat modi? Excepturi similique ad ex debitis maxime a? Maxime dolores repudiandae illum odio, cumque soluta iure molestias itaque ipsum ut incidunt quasi adipisci asperiores sed tempora dolorum at facere, ipsam expedita esse ea. Dicta eos fugit repellat tenetur odio culpa porro explicabo, voluptates ipsum maiores veritatis amet nihil voluptatum sunt! Optio laborum reiciendis nihil, officiis mollitia quod iusto autem placeat tempora distinctio quidem obcaecati nesciunt dolorem quas explicabo accusantium deleniti nam animi totam tenetur, molestiae, atque qui aspernatur? Eligendi minus reiciendis corrupti libero neque hic exercitationem, pariatur inventore nam, dolore nisi sint eius placeat doloribus? Sapiente maiores ab architecto quas dicta quod quasi saepe, possimus, asperiores dolores voluptatum iusto dolore libero ipsum, ratione odit ipsam repudiandae provident. Quibusdam ullam nulla sunt eligendi quos odit consequatur fuga sint nobis voluptatum, maiores nihil ipsum quas non? Illo aspernatur nesciunt architecto eaque sed nisi tempore error, labore ex impedit facilis aliquam ipsam, ad unde neque. Consequuntur explicabo non atque exercitationem numquam ratione odit iste est odio aliquam praesentium quia commodi, quos sit ipsum, voluptate nostrum nam repellat incidunt perferendis, accusantium ex? Totam neque repudiandae est, suscipit minus, recusandae mollitia in natus corporis eaque odio sapiente maiores reiciendis porro! Impedit dolor eius, odio et vel beatae quae nihil nulla officia eos tenetur, id necessitatibus minus architecto explicabo consectetur. Cum odio quae nemo laudantium dolorum corporis ab quasi, sit voluptatibus quia temporibus repellat alias mollitia neque voluptates nisi perferendis sequi fuga at exercitationem. Debitis voluptate mollitia illo suscipit nam nulla dolorem cum perspiciatis, odit ipsa. Voluptates aliquam doloremque ea excepturi eligendi odio eius facere sapiente id? Molestias ad quaerat, fugiat totam quos numquam, mollitia error at ut quis repudiandae praesentium est nemo beatae adipisci corporis odit cumque corrupti! Modi nihil dolore officiis odio rerum quam enim exercitationem quasi doloribus eaque veritatis fuga minima dolorum, quisquam autem nostrum suscipit laudantium! Ea fugiat earum accusantium quas? Reprehenderit id doloribus perferendis officiis aliquam aspernatur ipsum, minus quo accusantium. Cumque sequi laudantium pariatur maiores ipsam officia nobis non consectetur, esse voluptate dolorum aliquam dolor nisi iste necessitatibus vero quisquam earum repudiandae veniam! Amet in illo quas praesentium qui excepturi optio veniam, tempora vitae expedita vel, odio iste officia perspiciatis quaerat inventore neque natus ducimus laboriosam similique quibusdam illum? Excepturi explicabo molestias sed at repudiandae, voluptate dolores suscipit laudantium odio accusantium magni itaque est quae iure, alias quisquam dignissimos in natus? Doloribus aperiam veniam odit, quibusdam voluptatem quo, repudiandae iusto, ipsa maiores ad exercitationem necessitatibus odio repellat architecto vitae? Possimus quam inventore quidem ipsam. Et numquam iste possimus asperiores dicta! Pariatur error quidem, molestiae asperiores ab sint! Repudiandae nisi voluptatibus praesentium, corrupti id pariatur saepe corporis aliquid odio obcaecati accusantium sit. Vel quos esse, nemo debitis nihil est sint dicta facilis eius sit maiores modi incidunt! Quibusdam consequuntur incidunt ad fugit nisi architecto, earum vel a rerum sapiente. Iure quidem magnam laudantium atque, minima asperiores soluta impedit deleniti voluptatum mollitia deserunt repudiandae maiores eius, amet id voluptatem? Eligendi in soluta dolorum, magnam debitis maxime veniam ut magni repellat modi eius architecto veritatis, enim iste ducimus fuga at! Reiciendis odio numquam veniam alias fugiat necessitatibus beatae, eligendi, nemo, nostrum possimus sit dolore quaerat iste reprehenderit? Nam dolore nobis non nulla unde sapiente? Voluptate, voluptatem animi. Pariatur deleniti, ratione sint labore voluptates provident eos similique officiis natus modi dolorum laboriosam quisquam nulla iste aliquam perferendis, consequatur tempore eius! Magni tempore ad odio non ea vitae, necessitatibus aliquam?</div>
+          </div>
+        </aside>
 
+        <div className='md:col-span-9 flex flex-col overflow-hidden bg-yellow-800'>
+          <header className='bg-blue-500'>Header</header>
+          <main className='bg-yellow-500 overflow-y-auto overflow-x-hidden'>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat cupiditate consequatur blanditiis excepturi repudiandae quidem distinctio eaque! Quia voluptates vel distinctio odio accusamus quae autem ullam excepturi assumenda accusantium atque ex consectetur labore aliquid repellat ab quas nulla nam, dolorum ipsa consequatur rem quo mollitia. Laborum tempore doloribus vel harum quo, modi corrupti unde at quia ea, in eum alias voluptates inventore quidem nulla ullam cum accusantium a fugit? Delectus, eius beatae facere dolorum cum reiciendis! Rem non est eligendi officiis reprehenderit voluptatibus exercitationem quidem tenetur inventore, rerum quibusdam ipsam ut porro? Nobis tempore unde illo facere eaque praesentium maxime libero suscipit soluta aut ducimus eum non commodi, ex asperiores numquam corrupti, incidunt repellendus sed dicta dolor, quae illum? Quidem deserunt repellendus quod culpa incidunt eum expedita in magnam distinctio reprehenderit beatae enim at laborum fugiat, explicabo error laudantium? Atque laudantium tenetur assumenda eligendi eaque quidem? Aperiam modi necessitatibus odio. Voluptatum numquam inventore illo atque fugiat. Aspernatur dicta, delectus itaque nihil alias consequuntur, obcaecati doloremque impedit odio, mollitia porro exercitationem vero omnis dolorum voluptatum repudiandae officia rem accusamus ex consectetur aliquam facere! Corporis ex ut voluptatum vero odit ipsum quis id deleniti dolores? Laborum iste ut rerum quas, sed nam dolorem, dicta, eligendi velit blanditiis voluptatibus vero ex dolor. Nisi repellendus voluptatibus vel, modi officiis iure dolor inventore sequi, vitae autem minima unde tempore nostrum iusto ea, reiciendis non amet? Dicta culpa, alias aliquid nemo sapiente mollitia recusandae voluptatum sed! Dolore sunt facilis nostrum, provident ducimus tenetur modi dolores saepe repellendus possimus enim accusantium, eaque totam, at atque assumenda ratione minus voluptatibus fuga neque iure aliquam iste inventore corporis. Laboriosam nisi consequatur, reprehenderit minima voluptate exercitationem illum voluptatum numquam rem facere deserunt distinctio assumenda nulla, molestiae laudantium dolorum consectetur debitis eius eos excepturi ullam, impedit quisquam doloremque! Corrupti, error omnis tenetur reiciendis qui voluptatem sunt non quidem ab corporis. Vitae consequuntur tempora ipsum numquam vel aut voluptatibus quibusdam rerum deleniti nam quisquam ducimus animi amet tempore porro provident omnis dicta, modi, necessitatibus ex! Suscipit ullam, neque facere asperiores nihil pariatur aspernatur, impedit, unde ratione aliquam alias ea deleniti placeat nam! Ad tenetur minus omnis qui? Laboriosam quaerat quae sed deleniti earum enim consequuntur accusamus dolore praesentium sint dolorem veniam a, magnam, sit, doloribus quibusdam. Fugit odit aut optio quae sunt commodi ullam voluptatem culpa modi, necessitatibus atque! Quisquam voluptatem veritatis deserunt aut, saepe aspernatur ipsam tempore. Eius, suscipit nostrum repudiandae sed id dolore porro eveniet architecto non quas blanditiis. Animi saepe dolorum doloremque? Cumque saepe perferendis, commodi, tempora veniam mollitia tempore voluptate soluta consequatur id numquam exercitationem reprehenderit error? Corrupti dolores ratione a ullam aut accusantium, consectetur accusamus doloribus odit optio eius voluptatum labore dolorem officiis blanditiis, eveniet, esse placeat. Voluptas dolore esse a, aliquam totam quibusdam pariatur. Deleniti eligendi dolor dolores laudantium a veritatis quidem! Eum, sunt libero? Ipsum id, eius repellat aliquam quaerat praesentium beatae quas autem amet fugit ut, magni doloribus rerum eveniet accusantium velit nulla ipsam corporis facilis sapiente ducimus quibusdam. Dolorum asperiores porro, illo perspiciatis nisi quidem, necessitatibus ducimus tenetur dolores qui similique fugiat fuga, ut perferendis quis alias dolorem cum soluta blanditiis suscipit aperiam! Rerum laboriosam eaque tempore fugiat labore animi error placeat corrupti, perferendis ad aut debitis autem aliquid molestiae quaerat corporis exercitationem porro, omnis veritatis quo at odit. Corporis unde, optio maiores deleniti, sit harum nulla, nostrum exercitationem ut magni cupiditate odit porro ipsa repellat recusandae consectetur nobis officia accusamus aut nihil distinctio fugiat eligendi quod sed. Exercitationem dolore vitae consequatur, debitis maiores, culpa perspiciatis quaerat odit enim quasi praesentium. Culpa numquam provident consequatur, est totam quos tempore ab nostrum reprehenderit qui esse adipisci, possimus voluptates explicabo vel eos modi repellendus fuga, ut expedita. Tempora enim repellat, fugit perspiciatis obcaecati facere quos eos. Similique quae obcaecati fugiat aliquam perferendis numquam enim sunt debitis? Facilis ad illum necessitatibus quidem at eligendi in officiis repellat eos ut eaque, reiciendis natus molestiae unde nesciunt fugiat labore explicabo harum excepturi praesentium nam distinctio. Nostrum ipsam, laborum animi ad, suscipit voluptatem possimus, qui iure pariatur nesciunt architecto consectetur. Iusto provident laudantium consequatur non voluptatem sapiente id quia deleniti repellendus, quas reprehenderit, maxime reiciendis laborum distinctio! Similique, tenetur, consectetur quia eos laborum fuga in natus non, recusandae molestiae eius. Dolor sed porro ipsam molestiae voluptatem voluptas error quos quasi consequuntur vel ratione, deserunt nemo quisquam dolores doloribus reiciendis et dignissimos dolorum libero doloremque quas. Hic cupiditate dignissimos aperiam excepturi facere quis modi deserunt delectus, natus id minima laudantium commodi doloribus itaque magni voluptate. Deserunt, reiciendis modi illum dicta commodi aut quisquam optio aliquid ex hic vero alias in veniam, veritatis repudiandae architecto repellendus non nostrum totam voluptas quia facilis odit consequatur blanditiis. Odio dignissimos maxime, consequatur facere corporis ratione dolor at nihil asperiores nam omnis, corrupti, perferendis soluta quis quos! Officiis ab velit dolore fugit voluptatibus reprehenderit odit hic placeat impedit, repellendus quasi animi illo eos explicabo! Beatae veritatis maiores tempora, repellat temporibus iusto! Quisquam ipsa, ab placeat, maiores neque provident pariatur non fuga alias, dolor unde asperiores facere accusamus mollitia debitis aliquam dolores! Exercitationem cumque et ducimus accusantium nobis totam a quibusdam at nostrum numquam earum temporibus aliquam, iste minus doloremque officiis, incidunt in quisquam deserunt asperiores ea, minima explicabo dolorem! Ullam quia commodi sint? Corrupti placeat culpa nisi doloribus. Quaerat assumenda obcaecati eum pariatur illo perspiciatis voluptas, repellat est nostrum harum aliquid aspernatur adipisci nemo! Quae, fugit! Aliquam, tempore quaerat non animi impedit molestiae sed minus ex quia error dolor explicabo obcaecati incidunt eligendi. Assumenda ipsa nemo, eius corrupti nisi facere unde dolorum amet similique voluptates error autem laborum consequuntur maiores cum molestias sit laudantium nam blanditiis recusandae minima asperiores ratione repellendus sint. Eos autem architecto nemo culpa, at dolorum soluta deleniti, veniam totam porro sed eveniet voluptatum consequatur fuga iusto fugit iure eius. Perspiciatis voluptas totam eaque cumque reprehenderit quisquam officiis, eos repellat, iure commodi qui pariatur, nostrum itaque hic libero accusantium aliquam odit. Exercitationem autem iste modi dicta? Tenetur, quaerat. Totam a quidem modi provident harum reprehenderit esse, nisi soluta tempora natus delectus cupiditate.</div>
+          </main>
+          <footer className='bg-blue-500'>
+            dfnvirojv
+          </footer>
         </div>
-
-        <nav className=' flex-1 overflow-y-auto bg-gray-800 ' >
-          {navLinks.map((val, i) => {
-            return <div key={i} className='p-5'>
-
-              <span className=' mb-2 block text-base text-gray'>{val.label}</span>
-
-              {val?.children?.map((val2, i2) => {
-                return <MenuLink val2={val2} key={i2} />
-
-              })}
-            </div>
-          })}
-        </nav>
-      </aside>
-
-      <header className="left-0 md:left-64 transition-all duration-300 flex  justify-between items-center gap-6 px-4 py-3.5 bg-gray-800 border-l  fixed top-0  right-0">
-        <div className='md:hidden flex items-center gap-4'>
-          <button onClick={toggleAside} className='flex-none cursor-pointer flex items-center   text-xl justify-center w-10 h-10 rounded-lg  bg-blue-500/10 text-blue-500'><RiMenu4Fill /></button>
-
-        </div>
-        <h1 className="text-xl text-primary font-medium hidden md:block">Welcome!
-        </h1>
-        <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center   text-xl justify-center w-10 h-10 rounded-full  border border-gray-200'>
-          <FaGithub /></a>
-      </header>
-
-      <main className='md:ml-64 flex-1 mt-[69px] p-6 overflow-x-auto'>
-        <RootNavs />
-      </main>
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        theme="light"
-      />
+      </div>
     </div>
   )
 }
 
 export default App
-
-// const [loading, setLoading] = useState<boolean>(false);
-// const [items, setItems] = useState<GameModel[]>([]);
-
-
-// const getGames = async () => {
-//   setLoading(true)
-//   try {
-//     const response = await fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", fetchOptions)
-//     const data = await response.json()
-//     console.log(data)
-//     setItems(data)
-
-//   } catch (error) {
-//     console.log(error)
-//   } finally {
-//     setLoading(false)
-//   }
-// }
-
-// useEffect(() => {
-//   getGames()
-// }, [])
