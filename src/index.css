@@ -7,7 +7,7 @@
 }
 
 :root {
-  color-scheme: dark light;
+  color-scheme: dark;
 }
 
 .custom-container {
@@ -23,7 +23,7 @@
 }
 
 .nav-link {
-  @apply px-4 py-2 w-full block text-lg font-medium border-l-4;
+  @apply px-6 py-2 w-full block text-base font-medium border-l-4;
 }
 
 .active-nav-link {
