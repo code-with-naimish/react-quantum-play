@@ -7,9 +7,6 @@ const SortByPage = () => {
   const id = params.id;
   const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${id}`
 
-
-
-
   return (
     <GameList title={id ?? ""} url={url} />
   )
