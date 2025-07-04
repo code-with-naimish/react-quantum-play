@@ -23,7 +23,7 @@ const App = () => {
             <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>
               <FaGithub /></a>
           </header>
-          <main className=' flex-1 overflow-y-auto overflow-x-hidden'>
+          <main className=' flex-1 overflow-y-auto overflow-x-hidden p-5'>
             <RootNavs />
           </main>
           <footer className='border-t  border-purple-500/20'>
