@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { GameModel } from "../_models/game.model";
 import { toast } from "react-toastify";
 import GameCard from "../components/game-card";
+import { capitalizeFirstLetter } from "../_helpers/string-methods";
 
 const GameList = (props: {
   url: string,
@@ -51,7 +52,9 @@ const GameList = (props: {
   }, [props.url])
   return (
     <section>
-      <h2 className="text-4xl mb-8 font-bold gradient-text  uppercase">{props.title}</h2>
+      <h2 className="left-line mb-8  text-2xl pl-4 leading-none font-semibold">
+
+        {capitalizeFirstLetter(props.title)}</h2>
 
       {loading && <div className="no-data">
         <div className="loader"></div>
