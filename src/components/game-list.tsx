@@ -52,9 +52,14 @@ const GameList = (props: {
   }, [props.url])
   return (
     <section>
-      <h2 className="left-line mb-8  text-2xl pl-4 leading-none font-semibold">
+      <div className="flex mb-8 md:items-center md:justify-between md:flex-row flex-col gap-4">
+        <h2 className="left-line  text-2xl pl-4 leading-none font-semibold">{capitalizeFirstLetter(props.title)}</h2>
+        <div className="md:w-60 w-full">
+          <input type="text" placeholder="Type & Hit Enter to Search" className=" placeholder:text-sm px-6 py-2 rounded-lg w-full border  focus-visible:outline focus-visible:outline-purple-500 border-purple-500/60" />
 
-        {capitalizeFirstLetter(props.title)}</h2>
+        </div>
+      </div>
+
 
       {loading && <div className="no-data">
         <div className="loader"></div>
