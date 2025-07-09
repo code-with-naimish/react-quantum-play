@@ -46,3 +46,10 @@
   content: "";
   background-color: #e12afb;
 }
+
+.hero-bg {
+  background: linear-gradient(to right, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+    url("../public/hero-img.jpg");
+  background-size: cover;
+  background-position: center;
+}

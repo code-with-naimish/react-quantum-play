@@ -1,27 +1,24 @@
-import SortByPage from "./sortby-page"
+import PrimaryBtn from "../components/primary-btn"
+
 
 const Home = () => {
 
   return (
-    <div className="custom-container">
-      <div className="grid md:grid-cols-12 grid-cols-1 gap-5">
-
-        <div className="md:col-span-9 md:pb-0 pb-[40%] relative  rounded-2xl overflow-hidden">
-          <img className="w-full h-full absolute inset-0 object-cover" src="hero image.jpg" alt="hero image" />
-        </div>
-
-        <div className="md:col-span-3 h-full ">
-          <div className="h-full bg-gray-800 backdrop-blur-[5px] rounded-2xl border border-white/30 p-5 flex items-center justify-center flex-col">
-            <h1 className="text-4xl mb-6 font-bold  gradient-text">Quantum Play</h1>
-            <p className="text-lg">Step into a mind-bending adventure where quantum mechanics rule the game. Manipulate time, teleport across dimensions, and outsmart your rivals in a puzzle-action experience unlike any other.</p>
-          </div>
+    <section>
+      <div className="hero-bg   py-18 px-12 overflow-hidden rounded-2xl flex flex-col  justify-center items-center ">
+        <div>
+          <h1 className="md:text-5xl text-4xl font-semibold mb-4 ">Next-Gen Gaming, Zero Cost</h1>
+          <p className="text-lg font-light mb-8 md:max-w-2xl">Experience cutting-edge graphics, intense gameplay, and endless fun — all without spending a dime.</p>
+          <PrimaryBtn title="Explore now" />
         </div>
       </div>
-      < SortByPage />
-    </div>
+    </section>
 
   )
 }
 
 export default Home
+
+// <img src="/hero-img.jpg" alt="hero-img" className=" absolute  z-[1] inset-0 w-full h-full object-cover" />
+
 

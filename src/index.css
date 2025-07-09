@@ -10,9 +10,7 @@
   color-scheme: dark;
 }
 
-.custom-container {
-  @apply max-w-[1280px] mx-auto px-5;
-}
+
 
 .gradient-text {
   @apply bg-gradient-to-r from-indigo-500 to-fuchsia-500 inline-block text-transparent bg-clip-text;

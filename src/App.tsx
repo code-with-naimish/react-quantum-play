@@ -8,9 +8,9 @@ import RootNavs from './components/root-navs'
 const App = () => {
   return (
     <div className='bg-slate-200 p-8 '>
-      <div className='grid md:grid-cols-13 grid-cols-1 rounded-xl overflow-hidden  bg-black text-white h-[calc(100dvh-64px)]'>
+      <div className='grid md:grid-cols-12 grid-cols-1 rounded-xl overflow-hidden  bg-black text-white h-[calc(100dvh-64px)]'>
 
-        <aside className='md:col-span-3 flex flex-col overflow-hidden border-r border-purple-500/20'>
+        <aside className='md:col-span-2 flex flex-col overflow-hidden border-r border-purple-500/20'>
           <Logo />
           <div className=' flex-1 overflow-y-auto overflow-x-hidden'>
             <SideNav />
