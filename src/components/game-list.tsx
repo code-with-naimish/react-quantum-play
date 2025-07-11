@@ -49,11 +49,11 @@ const GameList = (props: {
 
   useEffect(() => {
     getGames(props.url)
-  }, [props.url])
+  }, [props?.url])
   return (
     <section>
       <div className="flex mb-8 md:items-center md:justify-between md:flex-row flex-col gap-4">
-        <h2 className="left-line  text-2xl pl-4 leading-none font-semibold">{capitalizeFirstLetter(props.title)}</h2>
+        <h2 className="left-line  text-2xl pl-4 leading-none font-semibold">{capitalizeFirstLetter(props?.title)}</h2>
         <div className="md:w-60 w-full">
           <input type="text" placeholder="Type & Hit Enter to Search" className=" placeholder:text-sm px-4 py-1.5 text-sm rounded-lg w-full border  focus-visible:outline focus-visible:outline-purple-500 border-purple-500/60" />
 
@@ -64,12 +64,12 @@ const GameList = (props: {
       {loading && <div className="no-data">
         <div className="loader"></div>
       </div>}
-      {!loading && (!items || items.length === 0) && <div className=" no-data">
+      {!loading && (!items || items?.length === 0) && <div className=" no-data">
         <p>No games available!</p>
       </div>}
-      {!loading && (items && items.length > 0) &&
+      {!loading && (items && items?.length > 0) &&
         <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6">
-          {items.map((val, i) => {
+          {items?.map((val, i) => {
             return <div key={i}>
               <GameCard val={val} />
             </div>
