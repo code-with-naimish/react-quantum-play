@@ -48,8 +48,13 @@
 }
 
 .hero-bg {
-  background: linear-gradient(to right, rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+  background: linear-gradient(
+      to right,
+      rgb(0, 0, 0, 0.5),
+      rgb(0, 0, 0, 0.1),
+      transparent
+    ),
     url("../public/hero-img.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: start;
 }
