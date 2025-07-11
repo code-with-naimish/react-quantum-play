@@ -37,7 +37,8 @@ const GameCard = (props: {
 
       <div className="flex-1">
 
-        <p className=" text-base font-medium  mb-2 flex items-start gap-2 group-hover:text-fuchsia-500 transition-all duration-300">
+        <p className=" text-base font-medium  mb-2
+         flex items-start gap-2 group-hover:text-fuchsia-500 transition-all duration-300">
 
           <span>{props?.val?.title}</span>
 
