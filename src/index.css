@@ -19,11 +19,11 @@
 }
 
 .nav-link {
-  @apply px-6 py-2 w-full block text-base font-medium border-l-4;
+  @apply px-4 py-2 w-full block text-base font-medium border-l-4;
 }
 
 .active-nav-link {
-  @apply bg-purple-500/30   border-purple-500;
+  @apply bg-purple-500/30    border-purple-500;
 }
 
 .inactive-nav-link {

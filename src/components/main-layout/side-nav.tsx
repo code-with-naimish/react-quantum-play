@@ -5,7 +5,7 @@ import { navLinks } from "../../_helpers/nav-link"
 
 const SideNav = () => {
   return (
-    <nav >
+    <nav className="px-4">
       {navLinks.map((val, i) => {
         return <div key={i}>
 
@@ -22,7 +22,7 @@ const SideNav = () => {
             </NavLink>
             :
             <>
-              <span className="!pl-4 nav-link border-transparent !text-sm opacity-60 ">{val.label}</span>
+              <span className="!pl-2 nav-link border-transparent !text-sm opacity-60 ">{val.label}</span>
 
               {val.children.map((val2, i2) => {
                 return <NavLink key={i2}
