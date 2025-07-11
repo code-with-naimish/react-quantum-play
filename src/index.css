@@ -10,8 +10,6 @@
   color-scheme: dark;
 }
 
-
-
 .gradient-text {
   @apply bg-gradient-to-r from-indigo-500 to-fuchsia-500 inline-block text-transparent bg-clip-text;
 }
@@ -21,7 +19,7 @@
 }
 
 .nav-link {
-  @apply px-6 py-2 w-full block text-base font-medium border-l-4;
+  @apply px-6 py-2 w-full block text-sm font-medium border-l-4;
 }
 
 .active-nav-link {

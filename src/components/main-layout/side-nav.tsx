@@ -22,7 +22,7 @@ const SideNav = () => {
             </NavLink>
             :
             <>
-              <span className="!pl-4 nav-link border-transparent !text-sm opacity-60 ">{val.label}</span>
+              <span className="!pl-4 nav-link border-transparent !text-xs opacity-60 ">{val.label}</span>
 
               {val.children.map((val2, i2) => {
                 return <NavLink key={i2}
