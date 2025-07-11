@@ -5,6 +5,12 @@ import { fetchOptions } from "../_helpers/fetch-option";
 import { toast } from "react-toastify";
 import { HomeFilterEnum } from "../_enum/home.filter.enum";
 
+const filterGenre = (arr: GameModel[], genre: HomeFilterEnum) => {
+  return arr?.filter((val) => {
+    return val?.genre?.toLowerCase() === genre.toLowerCase()
+  })?.slice(0, 5)
+
+}
 
 const Home = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -12,15 +18,14 @@ const Home = () => {
 
   // drived states
 
-  const mmorpg = items?.filter((val) => {
-    return val?.genre === HomeFilterEnum.MMORPG
-  })
+  const mmorpg = filterGenre(items, HomeFilterEnum.MMORPG)
 
-  const shooter = items?.filter((val) => {
-    return val.genre === HomeFilterEnum.SHOOTER
-  })
+  const shooter = filterGenre(items, HomeFilterEnum.SHOOTER)
+  const strategy = filterGenre(items, HomeFilterEnum.STRATEGY)
+  const battleRoyal = filterGenre(items, HomeFilterEnum.BATTLE_ROYALE)
+  const sports = filterGenre(items, HomeFilterEnum.SPORTS)
+  const cardGame = filterGenre(items, HomeFilterEnum.CARD_GAME)
 
-  console.log(shooter)
 
   const getGames = async () => {
 
