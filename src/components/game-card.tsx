@@ -22,12 +22,12 @@ const GameCard = (props: {
   return (
     <Link className="group flex flex-col  h-full " to={`/detail/${props?.val?.id}`}>
       <div className="aspect-video rounded-lg relative overflow-hidden mb-3">
-        <div className="absolute inset-0 bg-gradient-to-r  from-transparent via-black/20 to-black/70 "></div>
-        <img className=" w-full h-full object-cover" src={props?.val?.thumbnail} alt={props?.val?.title} />
-        <div title="Genre" className="absolute top-2 right-2">
+        <div className="absolute inset-0 bg-gradient-to-r  from-transparent via-black/20 to-black/70 z-[1] "></div>
+        <img className=" w-full h-full object-cover group-hover:scale-120 transition-all duration-300" src={props?.val?.thumbnail} alt={props?.val?.title} />
+        <div title="Genre" className="absolute top-2 right-2 z-[2]">
           <p className="bg-fuchsia-500/30 border border-fuchsia-500/60 text-white text-xs px-2 py-1 leading-none font-medium rounded-4xl">{props?.val?.genre}</p>
         </div>
-        <div className="absolute bottom-2 right-2">
+        <div className="absolute bottom-2 right-2 z-[2]">
           <div className="w-6 h-6 flex-none text-sm rounded-full flex items-center justify-center   bg-fuchsia-500/30 text-white border border-fuchsia-500/60">
             {isPcGame ? <LuLaptopMinimal title="PC Game" /> : <CiGlobe title="Browser Game" />}
           </div>
