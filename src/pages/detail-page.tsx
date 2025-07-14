@@ -60,8 +60,8 @@ const DetailPage = () => {
 
       {!loading && detail &&
         <>
-          <div className="grid grid-cols-12">
-            <div className="col-span-3">
+          <div className="grid md:grid-cols-12 grid-cols-1 gap-10 mb-10">
+            <div className="md:col-span-3">
               <div>
                 <GameCard val={detail} />
 
@@ -69,12 +69,12 @@ const DetailPage = () => {
 
             </div>
 
-            <div className="col-span-9 p-8">
-              <h2 className="text-6xl mb-7">{detail?.title}</h2>
-              <h3 className="text-3xl mb-3">Description</h3>
+            <div className="md:col-span-9 ">
+              <h2 className="md:text-6xl text-4xl mb-7">{detail?.title}</h2>
+              <h3 className="md:text-3xl text-2xl  mb-3">Description</h3>
               <p className="text-gray mb-7 line-clamp-5">{detail?.description}</p>
 
-              <div className="flex justify-between ">
+              <div className="flex md:flex-row flex-col md:items-center md:justify-between gap-6">
                 <div>
                   <ul className="list-none text-gray">
                     <p className="text-sm mb-3 font-bold text-white">Minimum System Requirements</p>
@@ -103,8 +103,8 @@ const DetailPage = () => {
           </div>
           <div>
             <h2 className="text-3xl mb-8 font-semibold">{detail?.title} Screenshots</h2>
-            <div className="grid grid-cols-3 gap-5 ">
-              {detail?.screenshots.map((screenshot) => (
+            <div className={`grid ${detail?.screenshots?.length > 3 ? 'md:grid-cols-4' : 'md:grid-cols-3'} grid-cols-1 gap-5 `}>
+              {detail?.screenshots?.map((screenshot) => (
                 <figure key={screenshot?.id} className="aspect-video overflow-hidden rounded-lg">
                   <FullImg src={screenshot?.image} alt={detail?.title} />
 
