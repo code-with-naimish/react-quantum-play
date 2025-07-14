@@ -5,6 +5,7 @@ import Logo from './components/main-layout/logo'
 import SideNav from './components/main-layout/side-nav'
 import RootNavs from './components/root-navs'
 import { useState } from 'react'
+import { MdOutlineClose } from 'react-icons/md'
 
 const App = () => {
   const year = new Date().getFullYear();
@@ -14,9 +15,7 @@ const App = () => {
     setShowSidebar(prev => !prev)
   }
 
-  const closeAside = () => {
-    setShowSidebar(false)
-  }
+
 
   return (
     <div className='grid md:grid-cols-12 grid-cols-1   overflow-hidden  bg-black text-white h-screen'>
@@ -24,8 +23,12 @@ const App = () => {
       <aside className={`md:col-span-2 flex flex-col overflow-hidden border-r border-purple-500/20
       md:h-auto h-screen md:overflow-y-hidden overflow-y-auto
          bg-black  z-50 md:static fixed md:bg-transparent md:z-auto transition-all
-       ${showSidebar ? "-translate-x-full   " : "md:translate-x-0"}
+         md:w-auto w-full
+       ${showSidebar ? "md:translate-x-0 -translate-x-full   " : "md:translate-x-0"}
         `}>
+        <button onClick={toggleAside} className='text-lg absolute top-4 right-3 md:hidden block'>
+          <MdOutlineClose />
+        </button>
         <Logo />
 
 
