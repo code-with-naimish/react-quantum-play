@@ -15,7 +15,7 @@ const GameList = (props: {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [items, setItems] = useState<GameModel[]>([]);
-  const [search, setSearch] = useState<string | undefined>(undefined)
+  const [search, setSearch] = useState<string>("")
 
   const getGames = async (url?: string) => {
     if (!url) {
@@ -60,6 +60,14 @@ const GameList = (props: {
 
     }
   }
+  const filteredArr = items?.filter((val) => {
+    const data = val?.title.toLowerCase()?.includes(search?.toLowerCase())
+    // console.log(val.title)
+    // console.log(search)
+
+    return data
+  }
+  )
 
   return (
     <section>
@@ -75,12 +83,12 @@ const GameList = (props: {
       {loading && <div className="no-data">
         <div className="loader"></div>
       </div>}
-      {!loading && (!items || items?.length === 0) && <div className=" no-data">
+      {!loading && (!filteredArr || filteredArr?.length === 0) && <div className=" no-data">
         <p>No games available!</p>
       </div>}
-      {!loading && (items && items?.length > 0) &&
+      {!loading && (filteredArr && filteredArr?.length > 0) &&
         <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
-          {items?.map((val, i) => {
+          {filteredArr?.map((val, i) => {
             return <div key={i}>
               <GameCard val={val} />
             </div>
