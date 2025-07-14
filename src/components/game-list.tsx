@@ -68,7 +68,7 @@ const GameList = (props: {
         <p>No games available!</p>
       </div>}
       {!loading && (items && items?.length > 0) &&
-        <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6">
+        <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
           {items?.map((val, i) => {
             return <div key={i}>
               <GameCard val={val} />

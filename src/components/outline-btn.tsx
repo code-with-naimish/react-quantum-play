@@ -6,7 +6,7 @@ const OutlineBtn = (props: {
   disabled?: boolean
 }) => {
   return (
-    <button onClick={props.onClick} disabled={props.disabled} className="disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer text-xs font-medium px-4 py-1.5 rounded-md border border-purple-500/40 " >
+    <button onClick={props.onClick} disabled={props.disabled} className="disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer text-xs font-medium px-4 md:py-1.5 py-2 rounded-md border border-purple-500/40 " >
       {props.title}
     </button>
   )
