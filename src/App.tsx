@@ -6,6 +6,7 @@ import SideNav from './components/main-layout/side-nav'
 import RootNavs from './components/root-navs'
 import { useState } from 'react'
 import { MdOutlineClose } from 'react-icons/md'
+import { RiMenu4Fill } from 'react-icons/ri'
 
 const App = () => {
   const year = new Date().getFullYear();
@@ -29,7 +30,10 @@ const App = () => {
         <button onClick={toggleAside} className='text-lg absolute top-4 right-3 md:hidden block'>
           <MdOutlineClose />
         </button>
-        <Logo />
+        <div className='p-4'>
+          <Logo />
+        </div>
+
 
 
         <div className=' flex-1 overflow-y-auto overflow-x-hidden'>
@@ -38,9 +42,20 @@ const App = () => {
       </aside>
 
       <div className='md:col-span-10 flex flex-col overflow-hidden'>
-        <header onClick={toggleAside} className='border-b  border-purple-500/20 px-6 py-3 flex justify-between items-center gap-6'>
-          <h1 className=' text-xl gradient-text font-semibold'>Welcome</h1>
-          <a href="https://github.com/code-with-naimish" target='_blank' className='flex items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>
+        <header className='border-b  border-purple-500/20 px-6 py-3 flex justify-between items-center gap-6'>
+          <div className='md:hidden flex items-center justify-between w-full gap-4'>
+            <div>
+              <Logo />
+
+            </div>
+            <button onClick={toggleAside} className='flex-none cursor-pointer flex items-center   text-xl justify-center w-10 h-10 rounded-lg  bg-purple-500/10 text-purple-500'><RiMenu4Fill /></button>
+
+          </div>
+          <div className='md:block hidden'>
+            <h1 className=' text-xl gradient-text font-semibold  '>Welcome</h1>
+
+          </div>
+          <a href="https://github.com/code-with-naimish" target='_blank' className='md:flex hidden items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>
             <FaGithub /></a>
         </header>
         <main className=' flex-1 overflow-y-auto overflow-x-hidden p-5'>
