@@ -4,6 +4,7 @@ import { LuLaptopMinimal } from "react-icons/lu";
 import { CiGlobe } from "react-icons/ci";
 import { convertYYYYMMDDtoDate } from "../_helpers/date-methods";
 import OutlineBtn from "./outline-btn";
+import FullImg from "./full-img";
 
 const GameCard = (props: {
   val: GameModel
@@ -24,7 +25,7 @@ const GameCard = (props: {
     <Link className="group flex flex-col  h-full " to={`/detail/${props?.val?.id}`}>
       <div className="aspect-video rounded-lg relative overflow-hidden mb-3">
         <div className="absolute inset-0 bg-gradient-to-r  from-transparent via-black/20 to-black/70 z-[1] "></div>
-        <img className=" w-full h-full object-cover group-hover:scale-120 transition-all duration-300" src={props?.val?.thumbnail} alt={props?.val?.title} />
+        <FullImg src={props?.val?.thumbnail} alt={props?.val?.title} />
         <div title="Genre" className="absolute top-2 right-2 z-[2]">
           <p className="bg-fuchsia-500/30 border border-fuchsia-500/60 text-white text-xs px-2 py-1 leading-none font-medium rounded-4xl">{props?.val?.genre}</p>
         </div>
@@ -35,6 +36,7 @@ const GameCard = (props: {
         </div>
 
       </div>
+
 
       <div className="flex-1">
 
