@@ -14,9 +14,7 @@ const App = () => {
         <Logo />
 
 
-        <div className=' flex-1 overflow-y-auto overflow-x-hidden'>
-          <SideNav />
-        </div>
+        <SideNav />
       </aside>
 
       <div className='md:col-span-10 flex flex-col overflow-hidden'>
