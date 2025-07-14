@@ -6,6 +6,7 @@ import SideNav from './components/main-layout/side-nav'
 import RootNavs from './components/root-navs'
 
 const App = () => {
+  const year = new Date().getFullYear()
   return (
     <div className='grid md:grid-cols-12 grid-cols-1   overflow-hidden  bg-black text-white h-screen'>
 
@@ -27,8 +28,8 @@ const App = () => {
         <main className=' flex-1 overflow-y-auto overflow-x-hidden p-5'>
           <RootNavs />
         </main>
-        <footer className='border-t  border-purple-500/20'>
-          dfnvirojv
+        <footer className='border-t  border-purple-500/20 p-4 text-white/70 text-sm  text-center'>
+          <p>&copy; {year} Designed & developed by <a className='text-white cursor-pointer hover:underline transition-all' href="https://github.com/code-with-naimish" target='_blank'>Naimish</a> with React.js Tailwind CSS & <a className='text-white cursor-pointer hover:underline transition-all' href="https://www.freetogame.com/api-doc" target='_blank'>FreeToGame API</a>  </p>
         </footer>
       </div>
     </div>
