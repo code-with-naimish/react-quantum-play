@@ -16,7 +16,7 @@ const TrendinGames = (props: {
         <h2 className="left-line  text-2xl pl-4 leading-none font-semibold">Trending {props?.title}</h2>
         <Link className="group-hover/section:opacity-100 opacity-0 text-fuchsia-500 font-medium hover:text-fuchsia-600 transition-all duration-300" to={props?.navLink}>View All</Link>
       </div>
-      <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6">
+      <div className="grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6">
         {props?.items?.map((val, i) => {
           return <div key={i}>
             <GameCard val={val} />

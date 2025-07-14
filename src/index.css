@@ -29,3 +29,7 @@
 .inactive-nav-link {
   @apply border-transparent transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/30;
 }
+
+body {
+  @apply selection:bg-purple-500 selection:text-white;
+}
