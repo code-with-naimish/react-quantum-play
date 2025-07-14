@@ -3,21 +3,22 @@ import { Link } from "react-router";
 import { LuLaptopMinimal } from "react-icons/lu";
 import { CiGlobe } from "react-icons/ci";
 import { convertYYYYMMDDtoDate } from "../_helpers/date-methods";
-import { CiPlay1 } from "react-icons/ci";
+import OutlineBtn from "./outline-btn";
 
 const GameCard = (props: {
   val: GameModel
 }
 
 ) => {
-  const handlePlayNow = (e: { preventDefault: () => void; }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handlePlayNow = (e: any) => {
     e.preventDefault();
     window.open(props?.val?.game_url, '_blank');
 
 
   }
 
-  const isPcGame = props?.val?.platform === 'PC (Windows)'
+  const isPcGame = props?.val?.platform.includes('PC (Windows)')
 
   return (
     <Link className="group flex flex-col  h-full " to={`/detail/${props?.val?.id}`}>
@@ -48,8 +49,8 @@ const GameCard = (props: {
 
       <div className="flex items-center justify-between gap-4 mt-6">
         <span className="text-xs text-white/50 ">{convertYYYYMMDDtoDate(props?.val?.release_date)}</span>
-        <button disabled={!props?.val?.game_url} onClick={handlePlayNow}
-          className="text-fuchsia-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer text-xs flex items-center gap-1.5"><CiPlay1 /> Play Now</button>
+
+        <OutlineBtn title="Play Now" disabled={!props?.val?.game_url} onClick={handlePlayNow} />
 
       </div>
 
