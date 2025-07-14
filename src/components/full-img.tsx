@@ -9,6 +9,7 @@ const FullImg = (props: {
 
   return (
     <img
+      loading="lazy"
       onError={() => setError(true)}
       className=" w-full h-full object-cover bg-slate-900 " src={imgSrc} alt={props?.alt} />
   )
