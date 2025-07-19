@@ -62,7 +62,7 @@ const DetailPage = () => {
         <>
           <div className="grid md:grid-cols-12 grid-cols-1 gap-10 mb-10">
             <div className="md:col-span-3">
-              <div>
+              <div className="border border-purple-500/40 rounded-3xl p-4">
                 <GameCard val={detail} />
 
               </div>
@@ -78,21 +78,21 @@ const DetailPage = () => {
                 <div>
                   <ul className="list-none text-gray">
                     <p className="text-sm mb-3 font-bold text-white">Minimum System Requirements</p>
-                    <li>Os : {detail?.minimum_system_requirements?.os}</li>
-                    <li>Processor : {detail?.minimum_system_requirements?.processor}</li>
-                    <li>Memory : {detail?.minimum_system_requirements?.memory}</li>
-                    <li>Graphics : {detail?.minimum_system_requirements?.graphics}</li>
-                    <li>Storage : {detail?.minimum_system_requirements?.storage}</li>
+                    <li>Os : {detail?.minimum_system_requirements?.os ?? "--"}</li>
+                    <li>Processor : {detail?.minimum_system_requirements?.processor ?? "--"}</li>
+                    <li>Memory : {detail?.minimum_system_requirements?.memory ?? "--"}</li>
+                    <li>Graphics : {detail?.minimum_system_requirements?.graphics ?? "--"}</li>
+                    <li>Storage : {detail?.minimum_system_requirements?.storage ?? "--"}</li>
                   </ul>
                 </div>
                 <div >
                   <ul className="list-none text-gray">
                     <p className="text-sm mb-3 font-bold text-white">Other Details</p>
-                    <li>Genre : {detail?.genre}</li>
-                    <li>Platform : {detail?.platform}</li>
-                    <li>Publisher : {detail?.publisher}</li>
-                    <li>Developer : {detail?.developer}</li>
-                    <li>Release_date : {detail?.release_date}</li>
+                    <li>Genre : {detail?.genre ?? "--"}</li>
+                    <li>Platform : {detail?.platform ?? "--"}</li>
+                    <li>Publisher : {detail?.publisher ?? "--"}</li>
+                    <li>Developer : {detail?.developer ?? "--"}</li>
+                    <li>Release_date : {detail?.release_date ?? "--"}</li>
                   </ul>
 
                 </div>
@@ -101,7 +101,7 @@ const DetailPage = () => {
 
 
           </div>
-          <div>
+          {detail?.screenshots && detail?.screenshots?.length > 0 && <div>
             <h2 className="text-3xl mb-8 font-semibold">{detail?.title} Screenshots</h2>
             <div className={`grid ${detail?.screenshots?.length > 3 ? 'md:grid-cols-4' : 'md:grid-cols-3'} grid-cols-1 gap-5 `}>
               {detail?.screenshots?.map((screenshot) => (
@@ -111,7 +111,8 @@ const DetailPage = () => {
                 </figure>
               ))}
             </div>
-          </div>
+          </div>}
+
         </>
       }
     </div>

@@ -25,7 +25,7 @@ const App = () => {
       md:h-auto h-screen md:overflow-y-hidden overflow-y-auto
          bg-black  z-50 md:static fixed md:bg-transparent md:z-auto transition-all
          md:w-auto w-full
-       ${showSidebar ? "md:translate-x-0 -translate-x-full   " : "md:translate-x-0"}
+       ${showSidebar ? "md:translate-x-0 " : "md:translate-x-0 -translate-x-full "}
         `}>
         <button onClick={toggleAside} className='text-lg absolute top-4 right-3 md:hidden block'>
           <MdOutlineClose />

@@ -72,7 +72,7 @@ const GameList = (props: {
   return (
     <section>
       <div className="flex mb-8 md:items-center md:justify-between md:flex-row flex-col gap-4">
-        <h2 className="left-line  text-2xl pl-4 leading-none font-semibold">{capitalizeFirstLetter(props?.title)}</h2>
+        <h2 className="left-line  md:text-2xl text-lg pl-4 leading-none font-semibold">{capitalizeFirstLetter(props?.title)}</h2>
         <div className="md:w-60 w-full">
           <input onKeyDown={onKeyDown} type="text" placeholder="Type & Hit Enter to Search" className=" placeholder:text-sm px-4 py-1.5 text-sm rounded-lg w-full border  focus-visible:outline focus-visible:outline-purple-500 border-purple-500/60" />
 
