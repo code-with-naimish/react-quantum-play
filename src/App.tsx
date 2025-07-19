@@ -37,7 +37,7 @@ const App = () => {
 
 
         <div className=' flex-1 mt-4 overflow-y-auto overflow-x-hidden'>
-          <SideNav />
+          <SideNav onClickNav={() => setShowSidebar(false)} />
         </div>
         <footer className='border-t  border-purple-500/20 px-4 py-3 text-white/40 text-[9px] '>
           <p>&copy; {year} Developed by <a className='text-white/70 cursor-pointer hover:underline transition-all' href="https://github.com/code-with-naimish" target='_blank'>Naimish</a> with React.js, Tailwind CSS & <a className='text-white/70 cursor-pointer hover:underline transition-all' href="https://www.freetogame.com/api-doc" target='_blank'>FreeToGame API</a>  </p>

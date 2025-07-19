@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 
 import { fetchOptions } from "../_helpers/fetch-option";
@@ -54,11 +53,11 @@ const GameList = (props: {
     getGames(props.url)
   }, [props?.url])
 
-  const onKeyDown = (e: any) => {
-    if (e.code === "Enter") {
-      setSearch(e.target.value)
-
-    }
+  const onSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.target as HTMLFormElement;
+    const text = form['search']?.value
+    setSearch(text)
   }
   const filteredArr = items?.filter((val) => {
     const data = val?.title.toLowerCase()?.includes(search?.toLowerCase())
@@ -73,10 +72,10 @@ const GameList = (props: {
     <section>
       <div className="flex mb-8 md:items-center md:justify-between md:flex-row flex-col gap-4">
         <h2 className="left-line  md:text-2xl text-lg pl-4 leading-none font-semibold">{capitalizeFirstLetter(props?.title)}</h2>
-        <div className="md:w-60 w-full">
-          <input onKeyDown={onKeyDown} type="text" placeholder="Type & Hit Enter to Search" className=" placeholder:text-sm px-4 py-1.5 text-sm rounded-lg w-full border  focus-visible:outline focus-visible:outline-purple-500 border-purple-500/60" />
+        <form onSubmit={onSubmitSearch} className="md:w-60 w-full">
+          <input name="search" type="text" placeholder="Type & Hit Enter to Search" className=" placeholder:text-sm px-4 py-1.5 text-sm rounded-lg w-full border  focus-visible:outline focus-visible:outline-purple-500 border-purple-500/60" />
 
-        </div>
+        </form>
       </div>
 
 
