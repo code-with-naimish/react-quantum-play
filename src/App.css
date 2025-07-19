@@ -77,3 +77,61 @@
   background-size: cover;
   background-position: start;
 }
+
+.moveLeftAnimation {
+  animation: moveInLeft 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.moveRightAnimation {
+  animation: moveInRight 1s ease-out;
+  backface-visibility: hidden;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.moveBottomAnimation {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  backface-visibility: hidden;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(13px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

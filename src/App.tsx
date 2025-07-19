@@ -52,7 +52,7 @@ const App = () => {
 
           </div>
           <div className='md:block hidden'>
-            <h1 className=' text-xl gradient-text font-semibold  '>Welcome</h1>
+            <h1 className=' text-xl gradient-text font-semibold  moveBottomAnimation'>Welcome</h1>
 
           </div>
           <a href="https://github.com/code-with-naimish" target='_blank' className='md:flex hidden items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>

@@ -61,15 +61,15 @@ const DetailPage = () => {
       {!loading && detail &&
         <>
           <div className="grid md:grid-cols-12 grid-cols-1 gap-10 mb-10">
-            <div className="md:col-span-3">
-              <div className="border border-purple-500/40 rounded-3xl p-4">
+            <div className="md:col-span-3 moveLeftAnimation">
+              <div className="border border-purple-500/40  rounded-3xl p-4">
                 <GameCard val={detail} />
 
               </div>
 
             </div>
 
-            <div className="md:col-span-9 ">
+            <div className="md:col-span-9 moveRightAnimation">
               <h2 className="md:text-6xl text-4xl mb-7">{detail?.title}</h2>
               <h3 className="md:text-3xl text-2xl  mb-3">Description</h3>
               <p className="text-gray mb-7 line-clamp-5">{detail?.description}</p>
@@ -101,7 +101,7 @@ const DetailPage = () => {
 
 
           </div>
-          {detail?.screenshots && detail?.screenshots?.length > 0 && <div>
+          {detail?.screenshots && detail?.screenshots?.length > 0 && <div className="moveBottomAnimation">
             <h2 className="text-3xl mb-8 font-semibold">{detail?.title} Screenshots</h2>
             <div className={`grid ${detail?.screenshots?.length > 3 ? 'md:grid-cols-4' : 'md:grid-cols-3'} grid-cols-1 gap-5 `}>
               {detail?.screenshots?.map((screenshot) => (
