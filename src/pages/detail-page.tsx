@@ -62,7 +62,7 @@ const DetailPage = () => {
         <>
           <div className="grid md:grid-cols-12 grid-cols-1 gap-10 mb-10">
             <div className="md:col-span-3 moveLeftAnimation">
-              <div className="border border-purple-500/40  rounded-3xl p-4">
+              <div className="border border-purple-500/20  rounded-3xl p-4">
                 <GameCard val={detail} />
 
               </div>
@@ -70,14 +70,13 @@ const DetailPage = () => {
             </div>
 
             <div className="md:col-span-9 moveRightAnimation">
-              <h2 className="md:text-6xl text-4xl mb-7">{detail?.title}</h2>
-              <h3 className="md:text-3xl text-2xl  mb-3">Description</h3>
+              <h2 className="md:text-5xl text-4xl font-semibold mb-7">{detail?.title}</h2>
               <p className="text-gray mb-7 line-clamp-5">{detail?.description}</p>
 
               <div className="flex md:flex-row flex-col md:items-center md:justify-between gap-6">
                 <div>
                   <ul className="list-none text-gray">
-                    <p className="text-sm mb-3 font-bold text-white">Minimum System Requirements</p>
+                    <p className="text-sm mb-3 font-medium text-white">Minimum System Requirements</p>
                     <li>Os : {detail?.minimum_system_requirements?.os ?? "--"}</li>
                     <li>Processor : {detail?.minimum_system_requirements?.processor ?? "--"}</li>
                     <li>Memory : {detail?.minimum_system_requirements?.memory ?? "--"}</li>
@@ -87,7 +86,7 @@ const DetailPage = () => {
                 </div>
                 <div >
                   <ul className="list-none text-gray">
-                    <p className="text-sm mb-3 font-bold text-white">Other Details</p>
+                    <p className="text-sm mb-3 font-medium text-white">Other Details</p>
                     <li>Genre : {detail?.genre ?? "--"}</li>
                     <li>Platform : {detail?.platform ?? "--"}</li>
                     <li>Publisher : {detail?.publisher ?? "--"}</li>

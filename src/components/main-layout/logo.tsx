@@ -7,7 +7,7 @@ const Logo = () => {
       <div className='w-8 h-8 text-xl flex items-center text-purple-500 justify-center bg-purple-500/30 rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm flex-none'>
         <IoGameControllerSharp />
       </div>
-      <p className=' md:break-all text-lg  font-semibold'><span className='text-purple-500  text-xl'>Q</span>uantum<span className='text-purple-500 text-xl'>P</span>lay</p>
+      <p className=' md:break-all text-base  font-semibold'><span className='text-purple-500  text-xl'>Q</span>uantum<span className='text-purple-500 text-xl'>P</span>lay</p>
     </Link>
   )
 }

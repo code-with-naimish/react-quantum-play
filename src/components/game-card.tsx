@@ -49,7 +49,7 @@ const GameCard = (props: {
         <p title={props?.val?.short_description} className="text-sm text-white/70 two-line-ellipsis">{props?.val?.short_description}</p>
       </div>
 
-      <div className="flex md:items-center md:justify-between md:flex-row flex-col gap-4 mt-6">
+      <div className="flex md:items-end md:justify-between md:flex-row flex-col gap-4 mt-6">
         <span className="text-xs text-white/50 ">{convertYYYYMMDDtoDate(props?.val?.release_date)}</span>
 
         <OutlineBtn title="Play Now" disabled={!props?.val?.game_url} onClick={handlePlayNow} />
