@@ -39,8 +39,8 @@ const App = () => {
         <div className=' flex-1 mt-4 overflow-y-auto overflow-x-hidden'>
           <SideNav onClickNav={() => setShowSidebar(false)} />
         </div>
-        <footer className='border-t  border-purple-500/20 px-4 py-3 text-white/40 text-[9px] '>
-          <p>&copy; {year} Developed by <a className='text-white/70 cursor-pointer hover:underline transition-all' href="https://github.com/code-with-naimish" target='_blank'>Naimish</a> with React.js, Tailwind CSS & <a className='text-white/70 cursor-pointer hover:underline transition-all' href="https://www.freetogame.com/api-doc" target='_blank'>FreeToGame API</a>  </p>
+        <footer className='border-t  border-purple-500/20 px-4 py-3 text-white/70 text-[10px] '>
+          <p>&copy; {year} Developed by <a className='text-white cursor-pointer hover:underline transition-all' href="https://github.com/code-with-naimish" target='_blank'>Naimish</a> with React.js, Tailwind CSS & <a className='text-white cursor-pointer hover:underline transition-all' href="https://www.freetogame.com/api-doc" target='_blank'>FreeToGame API</a>  </p>
         </footer>
       </aside>
 
@@ -58,7 +58,7 @@ const App = () => {
             <h1 className=' text-xl gradient-text font-semibold  moveBottomAnimation'>Welcome</h1>
 
           </div>
-          <a href="https://github.com/code-with-naimish" target='_blank' className='md:flex hidden items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>
+          <a aria-label='Github link for developer of site' href="https://github.com/code-with-naimish" target='_blank' className='md:flex hidden items-center flex-none  text-xl justify-center w-10 h-10 rounded-full  border border-purple-500/20'>
             <FaGithub /></a>
         </header>
         <main className=' flex-1 overflow-y-auto overflow-x-hidden p-5'>
